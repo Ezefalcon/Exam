@@ -22,4 +22,8 @@ public class Factura {
     public LocalDate getDate() {
         return date;
     }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
 }

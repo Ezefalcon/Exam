@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div>
+    <p>Ingrese el id</p>
+    <input type="number" id="redHeadId">
+    <button id="btn">Search</button>
+</div>
+<script>
+    //Esto deberia estar en un js aparte, pero para simplificar la entrega lo pongo aca
+    document.getElementById("btn").addEventListener("click", function() {
+        let id = document.getElementById("redHeadId");
+        if(isReallyRedHead(id.value, people)) {
+            alert("Es pelirroja")
+        } else {
+            alert("No es pelirroja")
+        }
+    });
+
+    class Person {
+        constructor(id, hairColor, parentId) {
+            this.id =id;
+            this.hairColor = hairColor;
+            this.parentId = parentId;
+        }
+        isRedHead() {
+            return this.hairColor == "red";
+        }
+
+        toString() {
+            return "id: "+this.id+" , hairColor: "+this.hairColor+" , parentId: "+ this.parentId;
+        }
+    }
+
+    let people = [
+        new Person(1,"red",null),
+        new Person(2,"red",1),
+        new Person(3,"red",2),
+        new Person(4,"brown",3),
+        new Person(5,"red",4),
+        new Person(6,"red",5),
+        new Person(7,"red",2)
+    ];
+
+    function isReallyRedHead(id, people) {
+        let currentPerson = people.find(x => x.id == id);
+        if(currentPerson.isRedHead() && currentPerson.parentId) {
+            return isReallyRedHead(currentPerson.parentId, people);
+        } else if(currentPerson.isRedHead() && !currentPerson.parentId){
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+</script>
+
+</body>
+</html>
