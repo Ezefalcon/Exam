@@ -29,7 +29,10 @@ E-Para una localidad y mes en particular, poder saber qué cliente compró la ma
 Proponga un Diagrama de Entidad-Relación que soporte la persistencia de información que necesita la empresa
 Desarrolle en Java los métodos necesarios (puede ser pseudocodigo) para los puntos C, D y E. Para el desarrollo asuma que por cada tabla del DER, hay una entidad Java correspondiente ya creada con las relaciones correspondientes según el DER que haya definido.
 
-[https://i.gyazo.com/dea9b97b45e22976f0c79e2efa978602.png](https://i.gyazo.com/dea9b97b45e22976f0c79e2efa978602.png)
+![alt text](https://i.gyazo.com/dea9b97b45e22976f0c79e2efa978602.png)
+
+    Se pueden ver las clases aca
+   [https://github.com/Ezefalcon/Exam/tree/master/src](https://github.com/Ezefalcon/Exam/tree/master/src)
 
 4- A) Modelar una mascota virtual, tipo Tamagotchi, incluyendo los mensajes correspondientes a las acciones de comer y jugar, y la pregunta acerca de si puede jugar o no.
 También hay que poder conocer el nivel de contenta de una mascota, que es un número entero mayor o igual que 0, donde a mayor nivel, más contenta está la mascota.
@@ -50,6 +53,10 @@ NO SE PUEDE CONSULTAR DE NINGUNA MANERA EL ESTADO ACTUAL DE LA MASCOTA. Esto qui
 Lo que solicita es el diagrama de clases (aproximado. No tiene que ser el diagrama UML exacto, sino algo representativo) y la implementación (código/pseudocódigo) de los métodos que considere principales
 
 B) Indique en palabras los pasos necesarios para incorporar un nuevo estado “Triste” en la mascota, de manera que quede listo para funcionar.
+
+    No llegue a modelarlo, pero lo que habría que hacer es implementar el patron de diseño Strategy, donde
+    cada estado seria una implementacion(Contento) de una interfaz(Estado) y añadir un estado mas
+    sería tan facil como implementar otro estado
 
 5- Dado un proyecto ya existente en un repositorio de Git, indique los comandos necesarios para descargarlo localmente, crear una rama propia, subir nuevos cambios y agegarlos a la rama principal.
 
